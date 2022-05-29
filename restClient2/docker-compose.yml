@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+    ports:
+      - "6001:6001"
+    networks:
+      - code-network
+networks:
+  code-network:
+    driver: bridge
